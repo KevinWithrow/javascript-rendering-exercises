@@ -4,7 +4,12 @@
     // TODO: Your code goes here.
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(rectangle)}</code>
+        <div style="
+        width: ${rectangle.width}px;
+        height: ${rectangle.height}px;
+        background-color: ${rectangle.color};
+        ">
+        </div>
         </div>
     `
   }
@@ -26,6 +31,9 @@
   const btnEl = document.getElementById('twoRectanglesBtn')
 
   function clickRectanglesBtn () {
+    const rectangleHTML = buildRectangleHTML(orangeRectangle) + buildRectangleHTML(blueRectangle)
+    
+    contentElement.innerHTML = rectangleHTML
     // using the buildRectangleHTML function, create the HTML for the orangeRectangle and blueRectangle
     // and then put them into the <div id=content> element
 

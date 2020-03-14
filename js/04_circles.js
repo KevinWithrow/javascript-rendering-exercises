@@ -3,10 +3,16 @@
   function buildCircleHTML (circle) {
     // HINT: You can create a circle out of a <div> by using the border-radius CSS property
     // { background: blue, border-radius: 50%; }
+    const circleDia = circle.radius * 2
+
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(circle)}</code>
-        </div>
+            <div style="
+            width: ${circleDia}px;
+            height: ${circleDia}px;
+            background-color: ${circle.color};
+            border-radius: 50%;
+            ">
+            </div>
     `
   }
 
@@ -35,6 +41,7 @@
   const btnEl = document.getElementById('circlesBtn')
 
   function clickCirclesBtn () {
+    const circleHTML = buildCircleHTML(circlesData)
     // using the buildCircleHTML function, create the HTML for the circlesData
     // Array and then put them into the <div id=content> element
 

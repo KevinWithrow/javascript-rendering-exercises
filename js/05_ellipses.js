@@ -4,9 +4,17 @@
     // TODO: Your code goes here.
     // HINT: draw an ellipse exactly like you would a rectangle, except add to
     //       the style "border-radius: 50%"
+    const ellipsesDia = ellipse.radius * 2
+
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(ellipse)}</code>
+        
+           <div style="
+            width: ${ellipse.width}px;
+            height: ${ellipse.height}px;
+            background-color: ${ellipse.color};
+            border-radius: 50%;
+            ">
+
         </div>
     `
   }
@@ -40,10 +48,16 @@
   const btnEl = document.getElementById('ellipsesBtn')
 
   function clickEllipsesBtn () {
+    const circleHTML = buildEllipseHTML(ellipsesData)
     // using the buildEllipseHTML function, create the HTML for the ellipsesData
     // Array and then put them into the <div id=content> element
 
     // TODO: your code goes here
+    contentElement.innerHTML = `
+      <div class="d-flex flex-column align-items-center">
+      ${ellipsesData.map(buildEllipseHTML).join('')}
+      </div>
+      `
   }
 
   // attach an event handler for button click
