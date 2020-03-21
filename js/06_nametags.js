@@ -3,14 +3,26 @@
   function buildNametagHTML (nametag) {
     // TODO: Your code goes here.
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(nametag)}</code>
+        
+        <div style="
+        width: ${rectangle.width}px;
+        height: ${rectangle.height}px;
+        background-color: ${rectangle.color};
+        ">
         </div>
+        
+
     `
   }
 
   // here we have five nametags, each represented by a JavaScript String,
   // all collected into an Array.
+  const rectangleData = {
+    const rectangleData = {
+      width: 250,
+      height: 100,
+      color: '#000000'
+    }
   const nametagData = [
     'Kamilah',
     'Kim',
@@ -22,7 +34,7 @@
   const btnEl = document.getElementById('nametagsBtn')
 
   function clickNametagsBtn () {
-    const circleHTML = buildNametagHTML(nametagData)
+    //const circleHTML = buildNametagHTML(nametagData)
    
     contentElement.innerHTML = `
       <div class="d-flex flex-column align-items-center">
